@@ -1,0 +1,292 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "AddOns",
+        "values": [
+          {
+            "id": "AMT",
+            "name": {
+              "value": "Abrechnungssperren Management Tool",
+              "synonyms": [
+                "amt",
+                "geldspeicher"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Energy Efficiency Solution",
+              "synonyms": [
+                "EES"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "business prozess management solution",
+              "synonyms": [
+                "BPMS"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "business prozess management solution foma",
+              "synonyms": [
+                "BPMS FoMa"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Auto Rechnungskorrektur",
+              "synonyms": [
+                "auto RK"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Business Process Exception Management One",
+              "synonyms": [
+                "BPEM One"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Datenaustauschportal",
+              "synonyms": [
+                "DAP"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Data Conversion Server",
+              "synonyms": [
+                "DCS"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dynamic List Manager",
+              "synonyms": [
+                "DLM"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Exception Clearing Monitoring",
+              "synonyms": [
+                "ECM"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Excel Reporting Framework",
+              "synonyms": [
+                "ERF"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "ICF ALV",
+              "synonyms": [
+                "ICFALV"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "IDEX PlugIns",
+              "synonyms": [
+                "IDEX"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "INVOIC Management Solution",
+              "synonyms": [
+                "IMS"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "KPI Portal",
+              "synonyms": [
+                "KPI"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Malo AAP",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Reklamations Management Solution",
+              "synonyms": [
+                "RMS"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "SAP Monitoring",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "DidNotUnderstand",
+        "samples": [
+          "i",
+          "e",
+          "asd",
+          "äh",
+          "u",
+          "mh",
+          "ah",
+          "uh"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetAddonIntent",
+        "samples": [
+          "Info zu {ADD_ON}",
+          "nach Info zu {ADD_ON} ",
+          "nach Infos zu {ADD_ON}",
+          "Infos zu {ADD_ON}"
+        ],
+        "slots": [
+          {
+            "name": "ADD_ON",
+            "type": "AddOns",
+            "samples": [
+              "{ADD_ON}"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GetAllNamesIntent",
+        "samples": [
+          "Nenne mir alle Namen",
+          "nach allen Namen",
+          "nach allen Produktnamen"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetCustomerIntent",
+        "samples": [
+          "Kunden",
+          "Kunde",
+          "nach Kunden",
+          "nach Kunde",
+          "nach deren Kunden",
+          "nach deren Kunde"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetIntenseIntent",
+        "samples": [
+          "Fakten",
+          "nach Fakten",
+          "Fakt",
+          "nach einem Fakt",
+          "einen Fakt",
+          "einem Fakt",
+          "nach Fakt"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetPortfolioIntent",
+        "samples": [
+          "nach Portfolio",
+          "Portfolio",
+          "nach dem Portfolio",
+          "nach ihrem Portfolio "
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "intense ag"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetAddonIntent.IntentSlot-ADD_ON",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Welches Produkt meintest du ?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "GetAddonIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "ADD_ON",
+            "type": "AddOns",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetAddonIntent.IntentSlot-ADD_ON"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
