@@ -2,7 +2,7 @@
 
 Dies ist ein Testskill für Alexa mit Inhalten
 
-Diese Information sind alle von der öffentlich zugänglichen Seite der Intense AG. Alles was nicht öffentlich sein sollte würde durch Platzhalter ersetzt.
+Diese Information sind alle von der öffentlich zugänglichen Seite der Intense AG. Alles was nicht öffentlich sein sollte wurde durch Platzhalter ersetzt.
 
 Inhalt: 
 
